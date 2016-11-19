@@ -13,3 +13,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'devise', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'acts_as_votable', '~> 0.10.0'
