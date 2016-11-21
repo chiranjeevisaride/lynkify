@@ -5,7 +5,14 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+   # @links = Link.all
+
+     if params[:tag].present? 
+      @links = Link.tagged_with(params[:tag])
+    else
+      @links = Link.all.order("created_at DESC")
+    end 
+
   end
 
   # GET /links/1
@@ -82,6 +89,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :url)
+      params.require(:link).permit(:title, :url, :tag_list)
     end
 end

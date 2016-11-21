@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
-
+  get 'tags/:tag', to: 'links#index', as: :tag
   devise_for :users
   resources :links do
     member do
